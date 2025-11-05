@@ -1,0 +1,36 @@
+.dashboard {
+  padding: var(--spacing-xl);
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+}
+
+.dashboard > h1 {
+  margin-bottom: var(--spacing-xl);
+}
+
+.dashboard__stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-3xl);
+}
+
+.dashboard__activity,
+.dashboard__actions {
+  margin-top: var(--spacing-3xl);
+}
+
+.dashboard__activity > h2,
+.dashboard__actions > h2 {
+  margin-bottom: var(--spacing-lg);
+}
+
+.card--danger {
+  border-left: 3px solid var(--color-danger);
+}
+
+@media (max-width: 768px) {
+  .dashboard__stats {
+    grid-template-columns: 1fr;
+  }
+}

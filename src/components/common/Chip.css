@@ -1,0 +1,29 @@
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-medium);
+  line-height: 1;
+}
+
+.chip--primary {
+  background-color: var(--color-primary-bg);
+  color: var(--color-primary);
+}
+
+.chip--success {
+  background-color: var(--color-success-bg);
+  color: var(--color-success);
+}
+
+.chip--warning {
+  background-color: var(--color-warning-bg);
+  color: var(--color-warning);
+}
+
+.chip--danger {
+  background-color: var(--color-danger-bg);
+  color: var(--color-danger);
+}

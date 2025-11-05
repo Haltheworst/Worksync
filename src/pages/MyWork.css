@@ -1,0 +1,9 @@
+.my-work {
+  padding: var(--spacing-xl);
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+}
+
+.my-work > h1 {
+  margin-bottom: var(--spacing-xl);
+}

@@ -1,0 +1,120 @@
+.app-shell {
+  display: grid;
+  grid-template-areas:
+    "appbar appbar"
+    "sidebar main";
+  grid-template-columns: var(--sidebar-width) 1fr;
+  grid-template-rows: var(--appbar-height) 1fr;
+  height: 100vh;
+}
+
+/* App Bar */
+.app-bar {
+  grid-area: appbar;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--spacing-xl);
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-stroke);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-appbar);
+}
+
+.app-bar__title {
+  font-size: var(--font-size-heading-l);
+  font-weight: var(--font-weight-semibold);
+}
+
+.app-bar__profile {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.app-bar__username {
+  font-size: var(--font-size-body);
+}
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  padding: var(--spacing-sm);
+  min-width: 44px;
+  min-height: 44px;
+}
+
+/* Sidebar */
+.sidebar {
+  grid-area: sidebar;
+  background-color: var(--color-surface);
+  border-right: 1px solid var(--color-stroke);
+  padding: var(--spacing-lg) 0;
+  overflow-y: auto;
+  z-index: var(--z-sidebar);
+}
+
+.sidebar__item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-xl);
+  color: var(--color-text);
+  font-size: var(--font-size-body);
+  transition: background-color var(--transition-fast);
+  min-height: 44px;
+}
+
+.sidebar__item:hover {
+  background-color: var(--color-bg);
+}
+
+.sidebar__item--active {
+  background-color: var(--color-primary-bg);
+  border-left: 3px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.sidebar__icon {
+  font-size: 20px;
+}
+
+/* Main Content */
+.main-content {
+  grid-area: main;
+  overflow-y: auto;
+  background-color: var(--color-bg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .app-shell {
+    grid-template-areas:
+      "appbar"
+      "main";
+    grid-template-columns: 1fr;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: var(--appbar-height);
+    left: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+    transition: transform var(--transition-base);
+    width: var(--sidebar-width);
+  }
+
+  .sidebar--open {
+    transform: translateX(0);
+  }
+
+  .app-bar__username {
+    display: none;
+  }
+}
